@@ -10,7 +10,7 @@ from sklearn.metrics import mean_absolute_error
 import os
 
 # 1. Загрузка данных
-df = pd.read_csv('data/goodreads_books.csv', on_bad_lines='skip')
+df = pd.read_csv('data/books.csv', on_bad_lines='skip')
 df.columns = df.columns.str.strip()
 
 # 2. Подготовка признаков (X) и цели (y)

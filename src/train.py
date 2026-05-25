@@ -7,9 +7,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error
+import os
 
 # 1. Загрузка данных
-df = pd.read_csv('data/books.csv', on_bad_lines='skip')
+df = pd.read_csv('data/goodreads_books.csv', on_bad_lines='skip')
 df.columns = df.columns.str.strip()
 
 # 2. Подготовка признаков (X) и цели (y)
@@ -61,6 +62,10 @@ else:
     best_name = "Базовое правило"
     best_mae = mae_baseline
     final_preds = baseline_preds
+
+model_dir = 'models'
+if not os.path.exists(model_dir):
+    os.makedirs(model_dir)
 
 # Сохранение
 if best_model is not None:

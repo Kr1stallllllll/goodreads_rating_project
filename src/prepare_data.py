@@ -12,7 +12,7 @@ def download_data():
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
 
-    destination = os.path.join(data_dir, 'goodreads_books.csv')
+    destination = os.path.join(data_dir, 'books.csv')
     shutil.copy2(source_file, destination)
     
     print(f"✅ Датасет загружен в {destination}")
